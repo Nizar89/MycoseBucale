@@ -33,6 +33,9 @@ public class PNJBehavior : MonoBehaviour {
 
 
 	//Feedbacks
+
+
+
 	private TextMesh _stateIndicator;
 
 	// FUNCTIONS
@@ -94,6 +97,12 @@ public class PNJBehavior : MonoBehaviour {
 
 		if (_currentState == PNJStates.Talking && IsPlayerVisible() == false){
 			_currentState = PNJStates.Unaware;
+			StateManager(_currentState);
+		}
+
+		if (IsPlayerVisible() && BehaviorMonster._monster._visualState == BehaviorMonster.VisualState.Degeu)
+		{
+			_currentState = PNJStates.Panic;
 			StateManager(_currentState);
 		}
 
