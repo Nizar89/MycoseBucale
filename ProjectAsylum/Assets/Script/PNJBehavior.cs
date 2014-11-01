@@ -84,6 +84,14 @@ public class PNJBehavior : MonoBehaviour {
 		}
 
 		// When He is talking
+		if (_currentState == PNJStates.Talking && IsNextToDestination(_destinationWhenCurious.position)){
+			_NMAgent.Stop();
+		}
+
+		if (_currentState == PNJStates.Talking && !IsNextToDestination(_destinationWhenCurious.position)){
+			_NMAgent.SetDestination(_destinationWhenCurious.position);
+		}
+
 		if (_currentState == PNJStates.Talking && IsPlayerVisible() == false){
 			_currentState = PNJStates.Unaware;
 			StateManager(_currentState);
@@ -94,23 +102,29 @@ public class PNJBehavior : MonoBehaviour {
 	void StateManager (PNJStates state){
 		switch (state){
 			case PNJStates.Unaware:
+				StopCoroutine("Talking");
 				StartCoroutine("RandomTargetGeneration");
+				_destinationWhenCurious = null;
 				_stateIndicator.text = "Unaware";
 			break;
 			case PNJStates.Curious:
+				StopCoroutine("Talking");
 				StopCoroutine("RandomTargetGeneration");
 				_NMAgent.SetDestination(_destinationWhenCurious.position);
 				_stateIndicator.text = "Curious";
 			break;
 			case PNJStates.Escape:
+				StopCoroutine("Talking");
 				StopCoroutine("RandomTargetGeneration");
 			break;
 			case PNJStates.Panic:
+				StopCoroutine("Talking");
 				StopCoroutine("RandomTargetGeneration");
 			break;
 			case PNJStates.Talking:
 				StartCoroutine("Talking");
 				_NMAgent.SetDestination(_destinationWhenCurious.position);
+				_stateIndicator.text = "Talking";
 			break;
 		}
 	}
@@ -119,12 +133,12 @@ public class PNJBehavior : MonoBehaviour {
 		bool tmpIsPLayerVisible = false;
 		Vector3 tmpPNJToPlayerHead = _player.transform.FindChild("Head").position - _pnjEyePosition.position;
 		Vector3 tmpPNJToPlayerFoot = _player.transform.FindChild("Foot").position - _pnjEyePosition.position;
-
+		Vector3 tmpPNJToPlayer = _player.transform.position - _pnjEyePosition.position;
 		//Raycasting From this.Eye to player.Eye
 		Ray Charles = new Ray(_pnjEyePosition.position, tmpPNJToPlayerHead);
 		RaycastHit hit;
 		Physics.Raycast(Charles, out hit, _pnjVisionDistance);
-		if (hit.collider != null && hit.collider.gameObject == _player.gameObject && Vector3.Angle(_pnjEyePosition.forward, tmpPNJToPlayerHead) <= _pnjVisionRadius){
+		if (hit.collider != null && hit.collider.gameObject == _player.gameObject && Vector3.Angle(_pnjEyePosition.forward, tmpPNJToPlayer) <= _pnjVisionRadius){
 			tmpIsPLayerVisible = true;
 			_destinationWhenCurious = _player.transform;
 		}
@@ -133,7 +147,7 @@ public class PNJBehavior : MonoBehaviour {
 			Ray Manzarek = new Ray(_pnjEyePosition.position, tmpPNJToPlayerFoot);
 			RaycastHit hit2;
 			Physics.Raycast(Manzarek, out hit2, _pnjVisionDistance);
-			if (hit.collider != null && hit.collider.gameObject == _player.gameObject && Vector3.Angle(_pnjEyePosition.forward, tmpPNJToPlayerFoot) <= _pnjVisionRadius){
+			if (hit.collider != null && hit.collider.gameObject == _player.gameObject && Vector3.Angle(_pnjEyePosition.forward, tmpPNJToPlayer) <= _pnjVisionRadius){
 				tmpIsPLayerVisible = true;
 				_destinationWhenCurious = _player.transform;
 			}
