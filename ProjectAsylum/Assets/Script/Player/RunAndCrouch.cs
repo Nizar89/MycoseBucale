@@ -9,6 +9,7 @@ public class RunAndCrouch : MonoBehaviour
 	private Transform tr;
 	private float dist; // distance to ground
 	// Use this for initialization
+
 	void Start ()
 	{
 		chMotor = GetComponent<CharacterMotor>();
