@@ -15,8 +15,8 @@ public class BehaviorMonster : MonoBehaviour
 	public float _durationNotHungry = 10f;
 	public float _durationHungry = 30f;
 
-	public TypeOfSound _typeOfSound;
-	public VisualState _visualState;
+	public TypeOfSound _typeOfSound = TypeOfSound.None;
+	public VisualState _visualState =  VisualState.Intriguant;
 
 	private GameObject _target;
 	private MyFsm _fsm = new MyFsm();
