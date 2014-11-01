@@ -12,7 +12,7 @@ public class PNJBehavior : MonoBehaviour {
 	private bool _onRandomTargetGeneration;
 
 	//Player Detection
-	public GameObject _player;
+	private GameObject _player;
 	public float _playerDetectionRadius;
 
 
@@ -27,6 +27,7 @@ public class PNJBehavior : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		// Variable Initialisation
+		_player = RunAndCrouch._Player;
 		_pnjEyePosition = transform.FindChild("EyePosition").transform.position;
 		_currentState = PNJStates.MovingRandom;
 		_NMAgent = GetComponent<NavMeshAgent>();
@@ -52,6 +53,8 @@ public class PNJBehavior : MonoBehaviour {
 	bool IsPlayerVisible (){
 		bool tmpIsPLayerVisible = false;
 		//Raycasting From this.Eye to player.Eye
+		//Ray Charles = new Ray(_pnjEyePosition, _player.transform.FindChild("
+		RaycastHit hit;
 
 		//Raycasting From this.Eye to player.Foot
 
