@@ -45,7 +45,7 @@ public class PNJBehavior : MonoBehaviour {
 		_stateIndicator = transform.FindChild("GUIState").GetComponent<TextMesh>();
 		_NMAgent = GetComponent<NavMeshAgent>();
 		_onRandomTargetGeneration = true;
-
+		_onTalkingToPlayer = true;
 
 		//First State
 		_currentState = PNJStates.Unaware;
@@ -155,8 +155,9 @@ public class PNJBehavior : MonoBehaviour {
 		GameObject tmpCadavre = null;
 		List<Collider> _objectsNearPNJ = Physics.OverlapSphere(this.transform.position, _pnjVisionDistance).ToList();
 		foreach (Collider objects in _objectsNearPNJ){
-			if (objects.gameObject == _cadavre.gameObject){
+			if (objects.gameObject == _cadavre.gameObject && _cadavreAlreadySeen.Contains(objects.gameObject) == false){
 				tmpCadavre = objects.gameObject;
+				_cadavreAlreadySeen.Add(tmpCadavre);
 			}
 		}
 		if (tmpCadavre != null){
