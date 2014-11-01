@@ -2,6 +2,8 @@
 using System.Collections;
 public class RunAndCrouch : MonoBehaviour
 {
+	public static GameObject _Player;
+
 	public float walkSpeed = 7; // regular speed
 	public float crchSpeed = 3; // crouching speed
 	public float runSpeed = 20; // run speed
@@ -12,6 +14,8 @@ public class RunAndCrouch : MonoBehaviour
 
 	void Start ()
 	{
+		_Player = this.gameObject;
+
 		chMotor = GetComponent<CharacterMotor>();
 		tr = transform;
 		CharacterController ch = GetComponent<CharacterController>();
