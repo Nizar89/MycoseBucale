@@ -12,7 +12,7 @@ public class PNJBehavior : MonoBehaviour {
 	private bool _onRandomTargetGeneration;
 
 	//Player Detection
-	public float _pnjVisionRadius = 50.0f;
+	public float _pnjVisionRadius = 50.00f;
 	public float _pnjVisionDistance = 10.0f;
 	public float _pnjDistMinToPlayer = 2.0f;
 
@@ -30,6 +30,8 @@ public class PNJBehavior : MonoBehaviour {
 	//Talking
 	public float _timeBetweenTalks = 5.0f;
 	private bool _onTalkingToPlayer;
+
+
 
 
 	//Feedbacks
@@ -53,10 +55,12 @@ public class PNJBehavior : MonoBehaviour {
 		//First State
 		_currentState = PNJStates.Unaware;
 		StateManager(_currentState);
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
+
 		//Ste Destination Update
 		if (_destinationWhenCurious != null){
 			_NMAgent.SetDestination(_destinationWhenCurious.position);
@@ -140,14 +144,18 @@ public class PNJBehavior : MonoBehaviour {
 
 	bool IsPlayerVisible (){
 		bool tmpIsPLayerVisible = false;
+
+		if (_destinationWhenCurious != null)
+			tmpIsPLayerVisible = IsNextToDestination(_destinationWhenCurious.position);
+
 		Vector3 tmpPNJToPlayerHead = _player.transform.FindChild("Head").position - _pnjEyePosition.position;
 		Vector3 tmpPNJToPlayerFoot = _player.transform.FindChild("Foot").position - _pnjEyePosition.position;
-		Vector3 tmpPNJToPlayer = _player.transform.position - _pnjEyePosition.position;
+		Vector3 tmpPNJToPlayer = _player.transform.position - new Vector3(_pnjEyePosition.position.x, _player.transform.position.y, _pnjEyePosition.position.z);
 		//Raycasting From this.Eye to player.Eye
 		Ray Charles = new Ray(_pnjEyePosition.position, tmpPNJToPlayerHead);
 		RaycastHit hit;
 		Physics.Raycast(Charles, out hit, _pnjVisionDistance);
-		if (hit.collider != null && hit.collider.gameObject == _player.gameObject && Vector3.Angle(_pnjEyePosition.forward, tmpPNJToPlayer) <= _pnjVisionRadius){
+		if (hit.collider != null && hit.collider.gameObject == _player && Vector3.Angle(_pnjEyePosition.forward, tmpPNJToPlayer) <= _pnjVisionRadius){
 			tmpIsPLayerVisible = true;
 			_destinationWhenCurious = _player.transform;
 		}

@@ -12,10 +12,14 @@ public class RunAndCrouch : MonoBehaviour
 	private float dist; // distance to ground
 	// Use this for initialization
 
-	void Start ()
+	void Awake()
 	{
 		_Player = this.gameObject;
+	}
 
+
+	void Start ()
+	{
 		chMotor = GetComponent<CharacterMotor>();
 		tr = transform;
 		CharacterController ch = GetComponent<CharacterController>();
