@@ -25,6 +25,8 @@ public class BehaviorMonster : MonoBehaviour
 	private MyFsm _fsm = new MyFsm();
 	private bool _isAttacking = false;
 
+	public GameObject _asticotAttack;
+
 	private Animator _animator;
 
 	public enum VisualState
@@ -221,7 +223,7 @@ public class BehaviorMonster : MonoBehaviour
 									if (_fsm.GetState() == (uint)State.Disgestion && hit.collider.GetComponent<PNJBehavior>() != null)
 									{
 										hit.collider.SendMessage("PNJToInfected");
-										_animator.SetTrigger("Attack");
+										StartCoroutine(SetAsticotAttack());
 									}
 									else if (_fsm.GetState() == (uint)State.Hunger && hit.collider.GetComponent<PNJBehavior>() != null)
 									{
@@ -241,5 +243,13 @@ public class BehaviorMonster : MonoBehaviour
 			}
 			yield return new WaitForSeconds(0.2f);
 		}
+	}
+
+	IEnumerator SetAsticotAttack()
+	{
+		_asticotAttack.SetActive(true);
+		yield return new WaitForSeconds(1.10f);
+		_asticotAttack.SetActive(false);
+
 	}
 }
