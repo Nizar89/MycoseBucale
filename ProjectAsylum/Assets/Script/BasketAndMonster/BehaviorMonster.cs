@@ -119,6 +119,10 @@ public class BehaviorMonster : MonoBehaviour
 						_visualState = VisualState.Intriguant;
 					}
 				}
+				else
+				{
+					//StopPerso
+				}
 				break;
 			}
 		}
@@ -198,7 +202,14 @@ public class BehaviorMonster : MonoBehaviour
 							{
 								if (Vector3.Angle(this.transform.forward,direction) < _angleVision) //If angle is good
 								{
-									Debug.Log("AttackPnj"); //LaunchAttack on _target
+									//LaunchAttack on _target
+									if (_fsm.GetState() == (uint)State.Disgestion)
+										hit.collider.SendMessage("PNJToInfected");
+									if (_fsm.GetState() == (uint)State.Hunger)
+									{
+										hit.collider.SendMessage("Death");
+										SetState(State.Disgestion);
+									}
 								}
 							}
 							else
