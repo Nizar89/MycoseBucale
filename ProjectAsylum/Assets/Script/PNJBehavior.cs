@@ -20,6 +20,9 @@ public class PNJBehavior : MonoBehaviour {
 	private Transform _pnjEyePosition;
 	public GameObject _cadavre;
 
+	public float _distanceToHearLightSound;
+	public float _distanceToHearMediumSound;
+
 	//PNJ States
 	public enum PNJStates {Unaware, Curious, Panic, Escape, Talking}
 	public PNJStates _currentState;
@@ -31,13 +34,10 @@ public class PNJBehavior : MonoBehaviour {
 	public float _timeBetweenTalks = 5.0f;
 	private bool _onTalkingToPlayer;
 
-
-
-
+	//Panic & Escape
+	public float _panicScreamRange;
+	private GameObject _exitDoor;
 	//Feedbacks
-
-
-
 	private TextMesh _stateIndicator;
 
 	// FUNCTIONS
@@ -51,7 +51,7 @@ public class PNJBehavior : MonoBehaviour {
 		_NMAgent = GetComponent<NavMeshAgent>();
 		_onRandomTargetGeneration = true;
 		_onTalkingToPlayer = true;
-
+		_exitDoor = GameObject.Find("Porte de Sortie");
 		//First State
 		_currentState = PNJStates.Unaware;
 		StateManager(_currentState);
@@ -65,8 +65,6 @@ public class PNJBehavior : MonoBehaviour {
 		if (_destinationWhenCurious != null){
 			_NMAgent.SetDestination(_destinationWhenCurious.position);
 		}
-
-		//When he hear a sound
 
 		//When he see something
 		if (IsCadavreVisible() && _currentState == PNJStates.Unaware){
@@ -90,6 +88,18 @@ public class PNJBehavior : MonoBehaviour {
 			//EatenByMonster
 		}
 
+		if (_currentState == PNJStates.Unaware 
+		    && BehaviorMonster._monster._typeOfSound == BehaviorMonster.TypeOfSound.Small 
+		    && Vector3.Distance(this.transform.position,_player.transform.position) <= _distanceToHearLightSound){
+			ScreamResponse (this.transform.position);
+		}
+
+		if (_currentState == PNJStates.Unaware 
+		    && BehaviorMonster._monster._typeOfSound == BehaviorMonster.TypeOfSound.Medium 
+		    && Vector3.Distance(this.transform.position,_player.transform.position) <= _distanceToHearMediumSound){
+			ScreamResponse (this.transform.position);
+		}
+
 		// When He is talking
 		if (_currentState == PNJStates.Talking && IsNextToDestination(_destinationWhenCurious.position)){
 			_NMAgent.Stop();
@@ -104,7 +114,15 @@ public class PNJBehavior : MonoBehaviour {
 			StateManager(_currentState);
 		}
 
-		if (IsPlayerVisible() && BehaviorMonster._monster._visualState == BehaviorMonster.VisualState.Degeu)
+		if (_currentState == PNJStates.Escape && IsNextToDestination(_destinationWhenCurious.position)){
+			print ("Hasta la vista baby");
+			Destroy(this.gameObject);
+		}
+
+		if ((_currentState == PNJStates.Curious 
+		    || _currentState == PNJStates.Talking)
+		    && IsPlayerVisible() 
+		    && BehaviorMonster._monster._visualState == BehaviorMonster.VisualState.Degeu)
 		{
 			_currentState = PNJStates.Panic;
 			StateManager(_currentState);
@@ -115,9 +133,9 @@ public class PNJBehavior : MonoBehaviour {
 	void StateManager (PNJStates state){
 		switch (state){
 			case PNJStates.Unaware:
+				_destinationWhenCurious = null;
 				StopCoroutine("Talking");
 				StartCoroutine("RandomTargetGeneration");
-				_destinationWhenCurious = null;
 				_stateIndicator.text = "Unaware";
 			break;
 			case PNJStates.Curious:
@@ -129,10 +147,17 @@ public class PNJBehavior : MonoBehaviour {
 			case PNJStates.Escape:
 				StopCoroutine("Talking");
 				StopCoroutine("RandomTargetGeneration");
+				_destinationWhenCurious = _exitDoor.transform;
+				_NMAgent.SetDestination(_destinationWhenCurious.position);
+				_stateIndicator.text = "Escape";
 			break;
 			case PNJStates.Panic:
 				StopCoroutine("Talking");
+				//_destinationWhenCurious = null;
 				StopCoroutine("RandomTargetGeneration");
+				_NMAgent.Stop();
+				_stateIndicator.text = "Panic";
+				StartCoroutine("Panicking");
 			break;
 			case PNJStates.Talking:
 				StartCoroutine("Talking");
@@ -140,6 +165,12 @@ public class PNJBehavior : MonoBehaviour {
 				_stateIndicator.text = "Talking";
 			break;
 		}
+	}
+
+	void ScreamResponse (Vector3 cryPosition){
+		_currentState = PNJStates.Curious;
+		_destinationWhenCurious.position = new Vector3 (cryPosition.x, cryPosition.y, cryPosition.z);
+		StateManager(_currentState);
 	}
 
 	bool IsPlayerVisible (){
@@ -227,5 +258,21 @@ public class PNJBehavior : MonoBehaviour {
 			//LaunchtalkingFeedback
 			yield return new WaitForSeconds(_timeBetweenTalks);
 		}
+	}
+
+	IEnumerator Panicking (){
+		// Scream Animation
+		// Scream Sound
+		List<Collider> _objectsHearingScream = Physics.OverlapSphere(this.transform.position, _panicScreamRange).ToList();
+		_objectsHearingScream.Remove(this.collider);
+		foreach (Collider objects in _objectsHearingScream){
+			if (objects.tag == "PNJ"){
+				objects.gameObject.SendMessage("ScreamResponse", this.transform.position);
+			}
+		}
+		yield return new WaitForSeconds(Random.Range(2.0f, 5.0f));
+		_currentState = PNJStates.Escape;
+		StateManager (_currentState);
+
 	}
 }
