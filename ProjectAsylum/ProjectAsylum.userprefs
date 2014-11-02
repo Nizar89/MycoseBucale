@@ -1,13 +1,19 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\PNJBehavior.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\BasketAndMonster\BehaviorMonster.cs">
     <Files>
-      <File FileName="Assets\Script\AlarmBehavior.cs" Line="34" Column="39" />
-      <File FileName="Assets\Script\PNJBehavior.cs" Line="126" Column="34" />
+      <File FileName="Assets\Script\PNJ\InfectedBehavior.cs" Line="197" Column="23" />
+      <File FileName="Assets\Script\PNJBehavior.cs" Line="66" Column="5" />
+      <File FileName="Assets\Script\BasketAndMonster\BehaviorMonster.cs" Line="71" Column="35" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="E:\SIG5\Asylum2014\ProjectAsylum\Assets\Script\BasketAndMonster\BehaviorMonster.cs" line="219" />
+      <Breakpoint file="E:\SIG5\Asylum2014\ProjectAsylum\Assets\Script\BasketAndMonster\BehaviorMonster.cs" line="216" />
+      <Breakpoint file="E:\SIG5\Asylum2014\ProjectAsylum\Assets\Script\BasketAndMonster\BehaviorMonster.cs" line="210" />
+      <Breakpoint file="E:\SIG5\Asylum2014\ProjectAsylum\Assets\Script\BasketAndMonster\BehaviorMonster.cs" line="203" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
