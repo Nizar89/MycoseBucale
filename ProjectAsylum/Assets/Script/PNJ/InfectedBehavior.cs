@@ -250,4 +250,9 @@ public class InfectedBehavior : MonoBehaviour
 		}
 		return tmpIsPLayerVisible;
 	}
+
+	public void Death()
+	{
+		Debug.Log ("Nope.avi");
+	}
 }

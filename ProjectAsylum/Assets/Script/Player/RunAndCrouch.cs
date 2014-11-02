@@ -33,6 +33,7 @@ public class RunAndCrouch : MonoBehaviour
 		chMotor.movement.maxForwardSpeed = 0;
 		Destroy(this.GetComponent<MouseLook>());
 		Destroy(Camera.main.GetComponent<MouseLook>());
+		this.SendMessage("Unable");
 		_isUsable = false;
 	}
 

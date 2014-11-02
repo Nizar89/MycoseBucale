@@ -189,7 +189,7 @@ public class BehaviorMonster : MonoBehaviour
 
 			foreach(Collider hit in hits)
 			{
-				if (hit.tag == "PNJ" && hit.renderer.isVisible)
+				if (hit.tag == "PNJ")
 				{
 					Vector3 direction = hit.transform.FindChild("EyePosition").transform.position - this.transform.position;
 					RaycastHit hitage;
