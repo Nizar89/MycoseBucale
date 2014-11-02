@@ -51,9 +51,34 @@ public class SoundMangerForPNJ : MonoBehaviour {
 			_audioSource.pitch = 1;
 			RandomVoice();
 			break;
+		//INFECTE
+		case 5:
+			//Marche
+			if (_audioSource.clip != _audioClips[2]){
+				_audioSource.pitch = 1;
+				_audioSource.clip = _audioClips[2];
+				_audioSource.Play();
+			}
+			break;
+		case 6:
+			//Course
+		if (_audioSource.clip != _audioClips[2]){
+			_audioSource.pitch = 2;
+			_audioSource.clip = _audioClips[2];
+			_audioSource.Play();
 		}
+		break;
+		case 7:
+			//Cri d'infectation
+			if (_audioSource.clip != _audioClips[3]){
+				_audioSource.pitch = 1;
+				_audioSource.clip = _audioClips[3];
+				_audioSource.Play();
+			}
+		break;
 	}
-
+}
+	
 	void RandomVoice (){
 		_audioSource.clip = _voices[Random.Range(0, _voices.Count)];
 		_audioSource.Play();
