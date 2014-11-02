@@ -39,6 +39,7 @@ public class PNJBehaviorV2 : MonoBehaviour
 	private Vector3 _exitDoor;
 	//Feedbacks
 	private TextMesh _stateIndicator;
+	private Animator _animator;
 
 
 	private MyFsm _fsm = new MyFsm();
@@ -70,7 +71,9 @@ public class PNJBehaviorV2 : MonoBehaviour
 
 	void Start () 
 	{
-	
+		_NMAgent = this.GetComponent<NavMeshAgent>();
+		_animator = this.GetComponent<Animator>();
+		SetState(State.Unaware);
 	}
 	
 	// Update is called once per frame
@@ -82,7 +85,28 @@ public class PNJBehaviorV2 : MonoBehaviour
 
 	void StateUnaware(FsmStateEvent eEvent)
 	{
-
+		switch(eEvent)
+		{
+			case FsmStateEvent.eEnter:
+			{
+				
+				_NMAgent.SetDestination(RandomTargetGeneration());
+				_animator.SetBool("Walk", true);
+				break;
+			}
+			case FsmStateEvent.eUpdate:
+			{
+				if (_NMAgent.remainingDistance < 0.2f)
+				{
+					_NMAgent.SetDestination(RandomTargetGeneration());
+				}
+				if (IsPlayerVisible() || (BehaviorMonster._monster._typeOfSound == BehaviorMonster.TypeOfSound.Medium))
+				{
+					SetState(State.Curious);
+				}
+				break;
+			}
+		}
 	}
 
 	void StateCurious(FsmStateEvent eEvent)
