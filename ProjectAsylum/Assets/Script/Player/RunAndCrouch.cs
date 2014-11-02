@@ -34,6 +34,7 @@ public class RunAndCrouch : MonoBehaviour
 		Destroy(this.GetComponent<MouseLook>());
 		Destroy(Camera.main.GetComponent<MouseLook>());
 		this.SendMessage("Unable");
+		GetComponentInChildren<Animator>().SetTrigger("Death");
 		_isUsable = false;
 	}
 

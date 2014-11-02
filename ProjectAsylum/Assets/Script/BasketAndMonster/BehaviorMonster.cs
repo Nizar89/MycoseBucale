@@ -25,6 +25,8 @@ public class BehaviorMonster : MonoBehaviour
 	private MyFsm _fsm = new MyFsm();
 	private bool _isAttacking = false;
 
+	private Animator _animator;
+
 	public enum VisualState
 	{
 		Intriguant,
@@ -84,6 +86,7 @@ public class BehaviorMonster : MonoBehaviour
 		StartCoroutine(HandlePnj());
 		_typeOfSound = TypeOfSound.None;
 		_visualState = VisualState.Intriguant;
+		_animator = this.GetComponent<Animator>();
 
 	}
 	
@@ -100,6 +103,7 @@ public class BehaviorMonster : MonoBehaviour
 			case FsmStateEvent.eEnter:
 			{
 				//Use Animator
+				_animator.SetTrigger("FeedBack");
 				break;
 			}
 			case FsmStateEvent.eUpdate:
@@ -213,11 +217,15 @@ public class BehaviorMonster : MonoBehaviour
 								{
 									//LaunchAttack on _target
 									if (_fsm.GetState() == (uint)State.Disgestion)
+									{
 										hit.collider.SendMessage("PNJToInfected");
-									if (_fsm.GetState() == (uint)State.Hunger)
+										_animator.SetTrigger("Attack");
+									}
+									else if (_fsm.GetState() == (uint)State.Hunger)
 									{
 										hit.collider.SendMessage("Death");
 										SetState(State.Disgestion);
+										_animator.SetTrigger("Attack");
 									}
 								}
 							}
