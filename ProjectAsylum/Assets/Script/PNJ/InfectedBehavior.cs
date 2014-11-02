@@ -187,8 +187,12 @@ public class InfectedBehavior : MonoBehaviour
 
 	public void ScreamResponse(Vector3 position)
 	{
-		_target = position;
-		SetState(State.Attack);
+		if (this.enabled == true)
+		{
+			_target = position;
+			SetState(State.Attack);
+		}
+
 	}
 
 	public Vector3 RandomTargetGeneration () //Call by animation
@@ -227,6 +231,7 @@ public class InfectedBehavior : MonoBehaviour
 		Vector3 tmpPNJToPlayerHead = RunAndCrouch._Player.transform.FindChild("Head").position - _pnjEyePosition.position;
 		Vector3 tmpPNJToPlayerFoot = RunAndCrouch._Player.transform.FindChild("Foot").position - _pnjEyePosition.position;
 		Vector3 tmpPNJToPlayer = RunAndCrouch._Player.transform.position - new Vector3(_pnjEyePosition.position.x, RunAndCrouch._Player.transform.position.y, _pnjEyePosition.position.z);
+		Debug.DrawRay(_pnjEyePosition.position, tmpPNJToPlayer * 5, Color.red);
 		//Raycasting From this.Eye to player.Eye
 		Ray Charles = new Ray(_pnjEyePosition.position, tmpPNJToPlayerHead);
 		RaycastHit hit;

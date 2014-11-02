@@ -41,6 +41,7 @@ public class PNJBehavior : MonoBehaviour {
 	private Vector3 _exitDoor;
 	//Feedbacks
 	private TextMesh _stateIndicator;
+	private Animator _animator;
 
 	// FUNCTIONS
 	// Use this for initialization
@@ -196,6 +197,9 @@ public class PNJBehavior : MonoBehaviour {
 		Vector3 tmpPNJToPlayerHead = _player.transform.FindChild("Head").position - _pnjEyePosition.position;
 		Vector3 tmpPNJToPlayerFoot = _player.transform.FindChild("Foot").position - _pnjEyePosition.position;
 		Vector3 tmpPNJToPlayer = _player.transform.position - new Vector3(_pnjEyePosition.position.x, _player.transform.position.y, _pnjEyePosition.position.z);
+		Debug.DrawRay(_pnjEyePosition.position, tmpPNJToPlayer * 5, Color.red);
+		Debug.DrawRay(_pnjEyePosition.position, _pnjEyePosition.forward * 5, Color.green);
+
 		//Raycasting From this.Eye to player.Eye
 		Ray Charles = new Ray(_pnjEyePosition.position, tmpPNJToPlayerHead);
 		RaycastHit hit;
