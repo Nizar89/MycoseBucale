@@ -68,9 +68,7 @@ public class PNJBehavior : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-		print (_player.transform.position);
-
+		
 		if ( _currentState == PNJStates.Talking){
 			this.transform.LookAt(_player.transform.position);
 		}

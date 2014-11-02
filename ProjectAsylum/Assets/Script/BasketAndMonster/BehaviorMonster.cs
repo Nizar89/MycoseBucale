@@ -66,12 +66,7 @@ public class BehaviorMonster : MonoBehaviour
 			}
 		}
 	}
-
-	public void FeedBackEat(bool active) //Call by anim
-	{
-		_feedBackEat1.SetActive(active);
-		_feedBackEat2.SetActive(active);
-	}
+	
 
 	void Awake()
 	{
@@ -112,9 +107,10 @@ public class BehaviorMonster : MonoBehaviour
 				//Send time to Animator?
 				if (!_isAttacking)
 				{
+					GetComponentInParent<CharacterController>().enabled = true;
 					if (_fsm.GetFsmStateTime() > _durationBeforeDeath)
 					{
-						Death();
+						_animator.SetTrigger("Death");
 					}
 					else if (_fsm.GetFsmStateTime() > _durationHungry)
 					{
@@ -134,7 +130,7 @@ public class BehaviorMonster : MonoBehaviour
 				}
 				else
 				{
-					//StopPerso
+					GetComponentInParent<CharacterController>().enabled = false;
 				}
 				break;
 			}
@@ -148,6 +144,7 @@ public class BehaviorMonster : MonoBehaviour
 			case FsmStateEvent.eEnter:
 			{
 				//Use Animator
+				GetComponentInParent<CharacterController>().enabled = true;
 				break;
 			}
 			case FsmStateEvent.eUpdate:
@@ -176,19 +173,24 @@ public class BehaviorMonster : MonoBehaviour
 
 	public void Death()
 	{
-		Debug.Log("DIE MOZERFUKER");
+		Application.LoadLevel(0);
 	}
 
-	public void SetAttack(bool attacking) //Call by animation
+	public void SetAttack(int attacking) //Call by animation
 	{
-		if (attacking)
+		if (attacking == 1)
 		{
 			_isAttacking = true;
 			_visualState = VisualState.Degeu;
 			_typeOfSound = TypeOfSound.Medium;
+			_feedBackEat1.SetActive(true);
+			_feedBackEat2.SetActive(true);
+
 		}
 		else
 		{
+			_feedBackEat1.SetActive(false);
+			_feedBackEat2.SetActive(false);
 			_isAttacking = false;
 		}
 	}
@@ -213,15 +215,15 @@ public class BehaviorMonster : MonoBehaviour
 							_target = hitage.collider.gameObject;
 							if (Vector3.Distance(this.transform.position, hit.transform.position) <= _distanceAttack) //If you are close enough to attack
 							{
-								if (Vector3.Angle(this.transform.forward,direction) < _angleVision) //If angle is good
+								if (Vector3.Angle(this.transform.forward,direction) < _angleVision && !_isAttacking) //If angle is good
 								{
 									//LaunchAttack on _target
-									if (_fsm.GetState() == (uint)State.Disgestion)
+									if (_fsm.GetState() == (uint)State.Disgestion && hit.collider.GetComponent<PNJBehavior>() != null)
 									{
 										hit.collider.SendMessage("PNJToInfected");
 										_animator.SetTrigger("Attack");
 									}
-									else if (_fsm.GetState() == (uint)State.Hunger)
+									else if (_fsm.GetState() == (uint)State.Hunger && hit.collider.GetComponent<PNJBehavior>() != null)
 									{
 										hit.collider.SendMessage("Death");
 										SetState(State.Disgestion);
