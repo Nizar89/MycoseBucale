@@ -157,7 +157,7 @@ public class BehaviorMonster : MonoBehaviour
 	}
 
 
-	void Death()
+	public void Death()
 	{
 		Debug.Log("DIE MOZERFUKER");
 	}
