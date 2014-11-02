@@ -39,7 +39,7 @@ public class PNJBehavior : MonoBehaviour {
 
 	//Panic & Escape
 	public float _panicScreamRange;
-	static GameObject _theExitDoor;
+	public static GameObject _theExitDoor;
 	private Vector3 _exitDoor;
 	//Feedbacks
 	private TextMesh _stateIndicator;

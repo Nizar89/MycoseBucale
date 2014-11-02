@@ -64,5 +64,11 @@ public class RunAndCrouch : MonoBehaviour
 			tr.position = tmpPosition;
 		}
 
+		if ( Vector3.Distance(this.transform.position, PNJBehavior._theExitDoor.transform.position) < 3.0f && _isVIPDead == true){
+
+			Application.LoadLevel(0);
+
+		}
+
 	}
 }

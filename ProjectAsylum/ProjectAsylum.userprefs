@@ -1,9 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\PNJBehavior.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\SoundMangerForPNJ.cs">
     <Files>
-      <File FileName="Assets\Script\PNJBehavior.cs" Line="203" Column="34" />
       <File FileName="Assets\Script\PNJBehavior.cs" Line="204" Column="37" />
+      <File FileName="Assets\Script\SoundMangerForPNJ.cs" Line="31" Column="27" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
