@@ -6,6 +6,7 @@ using System.Linq;
 public class PNJBehavior : MonoBehaviour {
 	public bool _IsVIP;
 	public static bool _isVIPDead;
+	public Material _vipMat;
 	//Random Position
 	public float _changingPositionFrequency;
 	public float _walkRadius;
@@ -60,6 +61,10 @@ public class PNJBehavior : MonoBehaviour {
 		_exitDoor = GameObject.Find("Porte de Sortie").transform.position;
 		_theExitDoor = GameObject.Find("Porte de Sortie");
 		_animator = this.GetComponentInChildren<Animator>();
+		//
+		if (_IsVIP){
+			this.renderer.material = _vipMat;
+		}
 		//First State
 		_currentState = PNJStates.Unaware;
 		StateManager(_currentState);
