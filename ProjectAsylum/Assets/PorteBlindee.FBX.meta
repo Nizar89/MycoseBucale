@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: ae79fe1feca7d2e4589f5fa3d7f65722
 ModelImporter:
-  serializedVersion: 16
+  serializedVersion: 15
   fileIDToRecycleName:
     100000: AccrocheGondPen_1
     100002: AccrocheGondPen_2
@@ -554,7 +554,6 @@ ModelImporter:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
     optimizeGameObjects: 0
-    motionNodeName: 
     animationCompression: 1
     animationRotationError: .5
     animationPositionError: .5
@@ -598,5 +597,4 @@ ModelImporter:
     rootMotionBoneName: 
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 2
-  additionalBone: 0
   userData: 
