@@ -22,6 +22,8 @@ public class InfectedBehavior : MonoBehaviour
 	private Transform _pnjEyePosition;
 
 	private Vector3 _target = new Vector3();
+	private Animator _animator;
+	public RuntimeAnimatorController _controller;
 
 	private enum State
 	{
@@ -68,6 +70,8 @@ public class InfectedBehavior : MonoBehaviour
 	{
 		_navMeshAgent = this.GetComponent<NavMeshAgent>();
 		_pnjEyePosition = transform.FindChild("EyePosition").transform;
+		_animator = this.GetComponent<Animator>();
+		_animator.runtimeAnimatorController = _controller;
 
 		Destroy(this.GetComponent<PNJBehavior>());
 
