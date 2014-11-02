@@ -117,6 +117,7 @@ public class PNJBehavior : MonoBehaviour {
 
 		if (_currentState == PNJStates.Escape && IsNextToDestination(_exitDoor)){
 			print ("Hasta la vista baby");
+			GameObject.Find("Porte de Sortie").GetComponent<AlarmBehavior>().ReduceAlarmLimit();
 			Destroy(this.gameObject);
 		}
 
