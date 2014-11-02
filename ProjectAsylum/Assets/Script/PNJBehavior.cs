@@ -5,7 +5,7 @@ using System.Linq;
 
 public class PNJBehavior : MonoBehaviour {
 	public bool _IsVIP;
-	static bool _isVIPDead;
+	public static bool _isVIPDead;
 	//Random Position
 	public float _changingPositionFrequency;
 	public float _walkRadius;
