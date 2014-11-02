@@ -191,15 +191,14 @@ public class InfectedBehavior : MonoBehaviour
 		SetState(State.Attack);
 	}
 
-	public void RandomTargetGeneration () //Call by animation
+	public Vector3 RandomTargetGeneration () //Call by animation
 	{
 		// Generate Random Position On Navmesh
 		Vector3 randomDirection = Random.insideUnitSphere * _walkRadius;
 		randomDirection += transform.position;
 		NavMeshHit hit;
 		NavMesh.SamplePosition(randomDirection, out hit, _walkRadius, 1);
-		_destination = hit.position;
-
+		return (hit.position);
 	}
 
 	void OnTriggerEnter(Collider other)
