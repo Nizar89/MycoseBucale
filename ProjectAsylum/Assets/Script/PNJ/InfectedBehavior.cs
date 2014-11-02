@@ -70,7 +70,7 @@ public class InfectedBehavior : MonoBehaviour
 	{
 		_navMeshAgent = this.GetComponent<NavMeshAgent>();
 		_pnjEyePosition = transform.FindChild("EyePosition").transform;
-		_animator = this.GetComponent<Animator>();
+		_animator = this.GetComponentInChildren<Animator>();
 		_animator.runtimeAnimatorController = _controller;
 
 		Destroy(this.GetComponent<PNJBehavior>());
@@ -118,15 +118,16 @@ public class InfectedBehavior : MonoBehaviour
 			case FsmStateEvent.eEnter:
 			{
 				//Play anim
+				_animator.SetTrigger("Walk");
 				RandomTargetGeneration();
-				_navMeshAgent.SetDestination(_destination);
+				_navMeshAgent.SetDestination(RandomTargetGeneration());
 				break;
 			}
 			case FsmStateEvent.eUpdate:
 			{
-				if (Vector3.Distance(this.transform.position, _destination) < 0.5f)
+				if (_navMeshAgent.remainingDistance < 0.5f)
 				{
-					//launchAnim, then set RandomTargetGeneration at the end of it
+					_navMeshAgent.SetDestination(RandomTargetGeneration());
 				}
 				HandleRushWhenSeePlayer();
 				break;
@@ -177,6 +178,7 @@ public class InfectedBehavior : MonoBehaviour
 			case FsmStateEvent.eEnter:
 			{
 				//LaunchAnim
+				_animator.SetTrigger("Attack");
 				_navMeshAgent.Stop();
 				break;
 			}

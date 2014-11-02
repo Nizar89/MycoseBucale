@@ -49,12 +49,10 @@ public class RunAndCrouch : MonoBehaviour
 			{
 				speed = runSpeed;
 			}
-			if (Input.GetKey("c"))
-			{ // press C to crouch
-				vScale = 0.5f;
-				speed = crchSpeed; // slow down when crouching
-			}
+	
 			chMotor.movement.maxForwardSpeed = speed; // set max speed
+			chMotor.movement.maxSidewaysSpeed = speed;
+			chMotor.movement.maxBackwardsSpeed = speed;
 			float ultScale = tr.localScale.y; // crouch/stand up smoothly
 			Vector3 tmpScale = tr.localScale;
 			Vector3 tmpPosition = tr.position;
@@ -66,7 +64,7 @@ public class RunAndCrouch : MonoBehaviour
 
 		if ( Vector3.Distance(this.transform.position, PNJBehavior._theExitDoor.transform.position) < 3.0f && PNJBehavior._isVIPDead == true){
 
-			Application.LoadLevel(0);
+			Application.LoadLevel(2);
 
 		}
 
