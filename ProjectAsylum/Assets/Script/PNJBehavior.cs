@@ -170,7 +170,7 @@ public class PNJBehavior : MonoBehaviour {
 				StartCoroutine("RandomTargetGeneration");
 				_stateIndicator.text = "Unaware";
 				_animator.SetBool("Walk", true);
-				_animator.SetBool("Speak", false);
+				_animator.SetInteger("Speak", 12);
 
 			break;
 			case PNJStates.Curious:
@@ -179,7 +179,7 @@ public class PNJBehavior : MonoBehaviour {
 				_NMAgent.SetDestination(_destinationWhenCurious);
 				_stateIndicator.text = "Curious";
 				_animator.SetBool("Walk", true);
-				_animator.SetBool("Speak", false);
+				_animator.SetInteger("Speak", 12);
 			break;
 			case PNJStates.Escape:
 				StopCoroutine("Talking");
@@ -204,7 +204,7 @@ public class PNJBehavior : MonoBehaviour {
 				_NMAgent.SetDestination(_destinationWhenCurious);
 				_stateIndicator.text = "Talking";
 				_animator.SetBool("Walk", false);
-				_animator.SetBool("Speak", true);
+				_animator.SetInteger("Speak", Random.Range(1,3));
 				
 			break;
 		}

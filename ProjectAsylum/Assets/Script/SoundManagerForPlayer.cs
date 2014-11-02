@@ -5,11 +5,16 @@ using System.Collections.Generic;
 public class SoundManagerForPlayer : MonoBehaviour {
 	
 	public List<AudioClip> _audioClips;
+	public List<AudioClip> _audioVoice;
+	public List<Sprite> _subtitles;
+
+	public SpriteRenderer _sprite;
 
 	private AudioSource _audioSource;
 	// Use this for initialization
 	void Start () {
 		_audioSource = this.GetComponent<AudioSource>();
+		StartCoroutine(Marcel());
 	}
 	
 	// Update is called once per frame
@@ -76,5 +81,22 @@ public class SoundManagerForPlayer : MonoBehaviour {
 	void RandomInAudio (List<AudioClip> list){
 		_audioSource.clip = list[Random.Range(0, list.Count)];
 		_audioSource.Play();
+	}
+
+	IEnumerator Marcel()
+	{
+		AudioSource JeanMichel = this.gameObject.AddComponent("AudioSource") as AudioSource;
+		while (true)
+		{
+			yield return new WaitForSeconds(Random.Range(5,10));
+			//JeanMichel.clip =  _audioVoice[Random.Range(0,_audioVoice.Count)];
+			_sprite.enabled = true;
+			_sprite.sprite =  _subtitles[Random.Range(0,_subtitles.Count)];
+			yield return new WaitForSeconds(5f);
+			_sprite.enabled = false;
+			yield return new WaitForSeconds(Random.Range(10,20));
+		}
+
+
 	}
 }
