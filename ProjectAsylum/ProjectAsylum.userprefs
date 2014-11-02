@@ -1,10 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\BasketAndMonster\BehaviorMonster.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\PNJBehavior.cs">
     <Files>
-      <File FileName="Assets\Script\AlarmBehavior.cs" Line="49" Column="22" />
-      <File FileName="Assets\Script\PNJBehavior.cs" Line="196" Column="22" />
-      <File FileName="Assets\Script\BasketAndMonster\BehaviorMonster.cs" Line="207" Column="1" />
+      <File FileName="Assets\Script\PNJBehavior.cs" Line="221" Column="61" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
