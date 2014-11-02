@@ -5,7 +5,7 @@ using System.Linq;
 
 public class PNJBehavior : MonoBehaviour {
 	public bool _IsVIP;
-
+	static bool _isVIPDead;
 	//Random Position
 	public float _changingPositionFrequency;
 	public float _walkRadius;
@@ -21,6 +21,7 @@ public class PNJBehavior : MonoBehaviour {
 	private GameObject _player;
 	private Transform _pnjEyePosition;
 	public GameObject _cadavre;
+	public GameObject _cadavreVIP;
 
 	public float _distanceToHearLightSound;
 	public float _distanceToHearMediumSound;
@@ -38,14 +39,17 @@ public class PNJBehavior : MonoBehaviour {
 
 	//Panic & Escape
 	public float _panicScreamRange;
+	static GameObject _theExitDoor;
 	private Vector3 _exitDoor;
 	//Feedbacks
 	private TextMesh _stateIndicator;
+	public Animator _animator;
 
 	// FUNCTIONS
 	// Use this for initialization
 	void Start () {
 		// Variable Initialisation
+		_isVIPDead = false;
 		_cadavreAlreadySeen = new List<GameObject>();
 		_player = RunAndCrouch._Player;
 		_pnjEyePosition = transform.FindChild("EyePosition").transform;
@@ -54,6 +58,7 @@ public class PNJBehavior : MonoBehaviour {
 		_onRandomTargetGeneration = true;
 		_onTalkingToPlayer = true;
 		_exitDoor = GameObject.Find("Porte de Sortie").transform.position;
+		_theExitDoor = GameObject.Find("Porte de Sortie");
 		//First State
 		_currentState = PNJStates.Unaware;
 		StateManager(_currentState);
@@ -124,7 +129,11 @@ public class PNJBehavior : MonoBehaviour {
 
 		if (_currentState == PNJStates.Escape && IsNextToDestination(_exitDoor)){
 			print ("Hasta la vista baby");
-			GameObject.Find("Porte de Sortie").GetComponent<AlarmBehavior>().ReduceAlarmLimit();
+			if (_IsVIP){
+				GameObject.Find("Porte de Sortie").GetComponent<AlarmBehavior>().AlarmLaunched();
+			}else{
+				GameObject.Find("Porte de Sortie").GetComponent<AlarmBehavior>().ReduceAlarmLimit();
+			}
 			Destroy(this.gameObject);
 		}
 
@@ -183,7 +192,12 @@ public class PNJBehavior : MonoBehaviour {
 	}
 
 	public void Death (){
-		Instantiate(_cadavre, this.transform.position, Quaternion.identity);
+		if (_IsVIP){
+			_isVIPDead = true;
+			Instantiate(_cadavreVIP, this.transform.position, Quaternion.identity);
+		}else{
+			Instantiate(_cadavre, this.transform.position, Quaternion.identity);
+		}
 		Destroy(this.gameObject);
 		//At the end of the animation, launch destroy
 	}
