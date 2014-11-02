@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 
 public class PNJBehavior : MonoBehaviour {
+	public bool _IsVIP;
+
 	//Random Position
 	public float _changingPositionFrequency;
 	public float _walkRadius;
@@ -62,18 +64,20 @@ public class PNJBehavior : MonoBehaviour {
 	void Update () {
 
 		//Ste Destination Update
-		if (_destinationWhenCurious != null && _currentState != PNJStates.Panic && _currentState != PNJStates.Escape){
+		if (_destinationWhenCurious != null && _currentState != PNJStates.Unaware && _currentState != PNJStates.Panic && _currentState != PNJStates.Escape){
 			_NMAgent.SetDestination(_destinationWhenCurious);
 		}
 
 		//When he see something
 		if (IsCadavreVisible() && _currentState == PNJStates.Unaware){
+			print ("See A cadavre and is Unaware");
 			_currentState = PNJStates.Curious;
 			StateManager(_currentState);
 		}
 
 		// If he see the Player
 		if (IsPlayerVisible() && _currentState == PNJStates.Unaware){
+			print ("See the player and is Unaware");
 			_currentState = PNJStates.Curious;
 			StateManager(_currentState);
 			// If Monster is In
@@ -82,7 +86,7 @@ public class PNJBehavior : MonoBehaviour {
 		}
 
 		//When he is next to the player
-		if (_currentState == PNJStates.Curious && IsNextToDestination(_destinationWhenCurious)){
+		if (_currentState == PNJStates.Curious && IsNextToDestination(_player.transform.position)){
 			_currentState = PNJStates.Talking;
 			StateManager(_currentState);
 			//EatenByMonster
@@ -93,12 +97,15 @@ public class PNJBehavior : MonoBehaviour {
 		    && Vector3.Distance(this.transform.position,_player.transform.position) <= _distanceToHearLightSound){
 			Vector3 tmpV3 = new Vector3 ( this.transform.position.x, this.transform.position.y, this.transform.position.z);
 			ScreamResponse (tmpV3);
+			print ("Is Unaware, ear a sound Small");
+
 		}
 
 		if (_currentState == PNJStates.Unaware 
 		    && BehaviorMonster._monster._typeOfSound == BehaviorMonster.TypeOfSound.Medium 
 		    && Vector3.Distance(this.transform.position,_player.transform.position) <= _distanceToHearMediumSound){
 			ScreamResponse (this.transform.position);
+			print ("Is Unaware, ear a sound BIG");
 		}
 
 		// When He is talking
@@ -186,10 +193,6 @@ public class PNJBehavior : MonoBehaviour {
 
 	bool IsPlayerVisible (){
 		bool tmpIsPLayerVisible = false;
-
-		if (_destinationWhenCurious != null)
-			tmpIsPLayerVisible = IsNextToDestination(_destinationWhenCurious);
-
 		Vector3 tmpPNJToPlayerHead = _player.transform.FindChild("Head").position - _pnjEyePosition.position;
 		Vector3 tmpPNJToPlayerFoot = _player.transform.FindChild("Foot").position - _pnjEyePosition.position;
 		Vector3 tmpPNJToPlayer = _player.transform.position - new Vector3(_pnjEyePosition.position.x, _player.transform.position.y, _pnjEyePosition.position.z);
@@ -260,6 +263,7 @@ public class PNJBehavior : MonoBehaviour {
 			Vector3 finalPosition = hit.position;
 			_NMAgent.SetDestination(finalPosition);
 			//Waiting
+			print ("Change Direction");
 			yield return new WaitForSeconds(_changingPositionFrequency);
 		}
 	}
