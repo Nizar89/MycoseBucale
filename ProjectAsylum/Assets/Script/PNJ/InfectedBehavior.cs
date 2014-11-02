@@ -96,7 +96,6 @@ public class InfectedBehavior : MonoBehaviour
 			}
 			case FsmStateEvent.eUpdate:
 			{
-				Debug.Log(_fsm.GetFsmStateTime());
 				if (_durationTransformation <= _fsm.GetFsmStateTime())
 				{
 					SetState(State.Hunting);
