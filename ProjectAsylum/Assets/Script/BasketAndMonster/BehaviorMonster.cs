@@ -15,6 +15,9 @@ public class BehaviorMonster : MonoBehaviour
 	public float _durationNotHungry = 10f;
 	public float _durationHungry = 30f;
 
+	public GameObject _feedBackEat1;
+	public GameObject _feedBackEat2;
+
 	public TypeOfSound _typeOfSound = TypeOfSound.None;
 	public VisualState _visualState =  VisualState.Intriguant;
 
@@ -60,6 +63,12 @@ public class BehaviorMonster : MonoBehaviour
 				break;
 			}
 		}
+	}
+
+	public void FeedBackEat(bool active) //Call by anim
+	{
+		_feedBackEat1.SetActive(active);
+		_feedBackEat2.SetActive(active);
 	}
 
 	void Awake()
