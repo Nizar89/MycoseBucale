@@ -29,7 +29,7 @@ public class AlarmBehavior : MonoBehaviour {
 		}
 	}
 
-	void AlarmLaunched (){
+	public void AlarmLaunched (){
 
 		foreach (GameObject door in _doors){
 			door.GetComponent<Animator>().Play("Open");
@@ -42,8 +42,10 @@ public class AlarmBehavior : MonoBehaviour {
 			alarm.GetComponent<Animation>().Play("LightAnim");
 
 		}
+	}
 
-
-
+	IEnumerator EndScreen (){
+		yield return new WaitForSeconds (5.0f);
+		//Load Defeat Scene
 	}
 }
