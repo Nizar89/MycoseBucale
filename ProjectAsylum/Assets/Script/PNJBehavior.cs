@@ -175,7 +175,8 @@ public class PNJBehavior : MonoBehaviour {
 	}
 
 	public void Death (){
-		//Animation
+		Instantiate(_cadavre, this.transform.position, Quaternion.identity);
+		Destroy(this.gameObject);
 		//At the end of the animation, launch destroy
 	}
 	public void PNJToInfected (){
