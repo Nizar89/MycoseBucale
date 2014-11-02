@@ -218,6 +218,7 @@ public class PNJBehavior : MonoBehaviour {
 	}
 
 	public void Death (){
+		Destroy(this.collider);
 		if (_IsVIP){
 			_isVIPDead = true;
 			Instantiate(_cadavreVIP, this.transform.position, Quaternion.identity);
