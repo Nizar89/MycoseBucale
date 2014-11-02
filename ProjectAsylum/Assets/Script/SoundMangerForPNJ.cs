@@ -15,28 +15,36 @@ public class SoundMangerForPNJ : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		if (!_audioSource.isPlaying){
+			_audioSource.Play();
+		}
 	}
 
 	public void PlayAudio (int index){
 		switch(index){
 		case 1:
 			//Marche
-			_audioSource.pitch = 1;
-			_audioSource.clip = _audioClips[1];
-			_audioSource.Play();
+			if (_audioSource.clip != _audioClips[0]){
+				_audioSource.pitch = 1;
+				_audioSource.clip = _audioClips[0];
+				_audioSource.Play();
+			}
 		break;
 		case 2:
 			//Course
-			_audioSource.pitch = 2;
-			_audioSource.clip = _audioClips[1];
-			_audioSource.Play();			
+			if (_audioSource.clip != _audioClips[0]){
+				_audioSource.pitch = 2;
+				_audioSource.clip = _audioClips[0];
+				_audioSource.Play();
+			}
 			break;
 		case 3:
 			//Cri
-			_audioSource.pitch = 1;
-			_audioSource.clip = _audioClips[3];
-			_audioSource.Play();			
+			if (_audioSource.clip != _audioClips[1]){
+				_audioSource.pitch = 1;
+				_audioSource.clip = _audioClips[1];
+				_audioSource.Play();
+			}
 			break;
 		case 4:
 			//Voices
