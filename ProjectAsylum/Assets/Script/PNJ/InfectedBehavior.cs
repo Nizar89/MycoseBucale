@@ -4,6 +4,7 @@ using System.Collections;
 public class InfectedBehavior : MonoBehaviour 
 {
 
+	public Material _infectedMaterial;
 	public float _durationTransformation = 5f;
 	public float _durationFeed = 10f;
 	public float _walkRadius = 20f;
@@ -58,6 +59,7 @@ public class InfectedBehavior : MonoBehaviour
 
 	void Awake()
 	{
+		this.renderer.material = _infectedMaterial;
 		_fsm.m_controller = this;
 	}
 
