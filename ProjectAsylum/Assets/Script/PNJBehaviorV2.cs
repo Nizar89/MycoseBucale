@@ -41,6 +41,8 @@ public class PNJBehaviorV2 : MonoBehaviour
 	private TextMesh _stateIndicator;
 	private Animator _animator;
 
+	private Vector3 _lastDestinationKnown = new Vector3();
+
 
 	private MyFsm _fsm = new MyFsm();
 
@@ -58,6 +60,9 @@ public class PNJBehaviorV2 : MonoBehaviour
 				break;
 			case State.Curious:
 				m_controller.StateCurious(eEvent);
+				break;
+			case State.Talking:
+				m_controller.StateTalk(eEvent);
 				break;
 			}
 		}
@@ -100,8 +105,10 @@ public class PNJBehaviorV2 : MonoBehaviour
 				{
 					_NMAgent.SetDestination(RandomTargetGeneration());
 				}
-				if (IsPlayerVisible() || (BehaviorMonster._monster._typeOfSound == BehaviorMonster.TypeOfSound.Medium))
+				if (IsPlayerVisible() || (BehaviorMonster._monster._typeOfSound == BehaviorMonster.TypeOfSound.Medium && 
+			                          Vector3.Distance(RunAndCrouch._Player.transform.position, this.transform.position) <= _distanceToHearMediumSound))
 				{
+					_lastDestinationKnown = RunAndCrouch._Player.transform.position;
 					SetState(State.Curious);
 				}
 				break;
@@ -111,7 +118,58 @@ public class PNJBehaviorV2 : MonoBehaviour
 
 	void StateCurious(FsmStateEvent eEvent)
 	{
+		switch (eEvent)
+		{
+			case FsmStateEvent.eEnter:
+			{
+				break;
+			}
+			case FsmStateEvent.eUpdate:
+			{
+				_animator.SetBool("Walk", true);
+				if (IsPlayerVisible())
+				{
+					_NMAgent.SetDestination(RunAndCrouch._Player.transform.position);
+					_lastDestinationKnown = RunAndCrouch._Player.transform.position;
+					if (_pnjDistMinToPlayer < _NMAgent.remainingDistance)
+					{
+						SetState(State.Talking);
+					}
+				}
+				else 
+				{
+					_NMAgent.SetDestination(_lastDestinationKnown);
+				}
+				break;
+			}
+		}
+	}
 
+	void StateTalk(FsmStateEvent eEvent)
+	{
+		switch(eEvent)
+		{
+			case FsmStateEvent.eEnter:
+			{
+				_animator.SetBool("Walk", false);
+				_animator.SetBool("Speak", true); //Check
+				break;
+			}
+			case FsmStateEvent.eUpdate:
+			{
+				this.transform.LookAt(RunAndCrouch._Player.transform.position);
+				if (!IsPlayerVisible() || Vector3.Distance(RunAndCrouch._Player.transform.position, this.transform.position) <= _pnjVisionDistance)
+				{
+					SetState(State.Unaware);
+				}
+				else
+				{
+					_NMAgent.SetDestination(RunAndCrouch._Player.transform.position);
+				}
+
+				break;
+			}
+		}
 	}
 
 	void SetState(State newState)
