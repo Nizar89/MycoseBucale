@@ -59,6 +59,7 @@ public class PNJBehavior : MonoBehaviour {
 		_onTalkingToPlayer = true;
 		_exitDoor = GameObject.Find("Porte de Sortie").transform.position;
 		_theExitDoor = GameObject.Find("Porte de Sortie");
+		_animator = this.GetComponentInChildren<Animator>();
 		//First State
 		_currentState = PNJStates.Unaware;
 		StateManager(_currentState);
@@ -165,12 +166,17 @@ public class PNJBehavior : MonoBehaviour {
 				StopCoroutine("Talking");
 				StartCoroutine("RandomTargetGeneration");
 				_stateIndicator.text = "Unaware";
+				_animator.SetBool("Walk", true);
+				_animator.SetBool("Speak", false);
+
 			break;
 			case PNJStates.Curious:
 				StopCoroutine("Talking");
 				StopCoroutine("RandomTargetGeneration");
 				_NMAgent.SetDestination(_destinationWhenCurious);
 				_stateIndicator.text = "Curious";
+				_animator.SetBool("Walk", true);
+				_animator.SetBool("Speak", false);
 			break;
 			case PNJStates.Escape:
 				StopCoroutine("Talking");
@@ -178,6 +184,8 @@ public class PNJBehavior : MonoBehaviour {
 				_destinationWhenCurious = _exitDoor;
 				_NMAgent.SetDestination(_destinationWhenCurious);
 				_stateIndicator.text = "Escape";
+				_animator.SetBool("Run", true);
+	
 			break;
 			case PNJStates.Panic:
 				StopCoroutine("Talking");
@@ -185,11 +193,16 @@ public class PNJBehavior : MonoBehaviour {
 				_NMAgent.Stop();
 				_stateIndicator.text = "Panic";
 				StartCoroutine("Panicking");
+				_animator.SetTrigger("Shout");
+
 			break;
 			case PNJStates.Talking:
 				StartCoroutine("Talking");
 				_NMAgent.SetDestination(_destinationWhenCurious);
 				_stateIndicator.text = "Talking";
+				_animator.SetBool("Walk", false);
+				_animator.SetBool("Speak", true);
+				
 			break;
 		}
 	}
