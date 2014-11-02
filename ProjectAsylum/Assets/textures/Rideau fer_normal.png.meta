@@ -1,7 +1,6 @@
 fileFormatVersion: 2
 guid: 3ae6dccce43cdfd44a64ae5cc5b4a236
 TextureImporter:
-  fileIDToRecycleName: {}
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -15,7 +14,7 @@ TextureImporter:
   bumpmap:
     convertToNormalMap: 1
     externalNormalMap: 1
-    heightScale: .115999997
+    heightScale: .0280000009
     normalMapFilter: 1
   isReadable: 0
   grayScaleToAlpha: 0
@@ -36,7 +35,6 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: .5, y: .5}
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 0
   textureType: 1
