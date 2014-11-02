@@ -19,3 +19,4 @@ sysinfo.txt
 *.csproj
 *.sln
 ProjectAsylum/ProjectAsylum.userprefs.rej
+ProjectAsylum/Builds/

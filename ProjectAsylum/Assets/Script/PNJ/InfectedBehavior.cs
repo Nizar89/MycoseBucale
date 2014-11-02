@@ -5,6 +5,7 @@ public class InfectedBehavior : MonoBehaviour
 {
 
 	public float _durationTransformation = 5f;
+	public float _durationFeed = 10f;
 	public float _walkRadius = 20f;
 
 	public float _speedWalk = 20f;
@@ -47,6 +48,9 @@ public class InfectedBehavior : MonoBehaviour
 				case State.Attack:
 					m_controller.StateAttack(eEvent);
 					break;
+				case State.Feeding:
+					m_controller.StateFeeding(eEvent);
+					break;
 
 			}
 		}
@@ -62,6 +66,9 @@ public class InfectedBehavior : MonoBehaviour
 	{
 		_navMeshAgent = this.GetComponent<NavMeshAgent>();
 		_pnjEyePosition = transform.FindChild("EyePosition").transform;
+
+		Destroy(this.GetComponent<PNJBehavior>());
+
 		SetState(State.Transformation);
 	}
 	
@@ -84,10 +91,12 @@ public class InfectedBehavior : MonoBehaviour
 			case FsmStateEvent.eEnter:
 			{
 				//Play anim
+				_navMeshAgent.Stop();
 				break;
 			}
 			case FsmStateEvent.eUpdate:
 			{
+				Debug.Log(_fsm.GetFsmStateTime());
 				if (_durationTransformation <= _fsm.GetFsmStateTime())
 				{
 					SetState(State.Hunting);
@@ -141,6 +150,7 @@ public class InfectedBehavior : MonoBehaviour
 				else if (_targetToKill != null)
 				{
 					_targetToKill.SendMessage("Death");
+					SetState(State.Feeding);
 				}
 				break;
 			}
@@ -152,6 +162,27 @@ public class InfectedBehavior : MonoBehaviour
 				break;
 			}
 
+		}
+	}
+
+	void StateFeeding(FsmStateEvent eEvent)
+	{
+		switch (eEvent)
+		{
+			case FsmStateEvent.eEnter:
+			{
+				//LaunchAnim
+				_navMeshAgent.Stop();
+				break;
+			}
+			case FsmStateEvent.eUpdate:
+			{
+				if (_fsm.GetFsmStateTime() > _durationFeed)
+				{
+					SetState(State.Hunting);
+				}
+				break;
+			}
 		}
 	}
 
