@@ -14,46 +14,60 @@ public class SoundManagerForPlayer : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if (!_audioSource.isPlaying){
+			_audioSource.Play();
+		}
 	}
 	
 	public void PlayAudio (int index){
 		switch(index){
 		case 1:
 			//
+			if (_audioSource.clip != _audioClips[0]){
+				_audioSource.pitch = 1;
+				_audioSource.clip = _audioClips[0];
+				_audioSource.Play();
+			}
+				break;
+		case 2:
+			//
+			if (_audioSource.clip != _audioClips[1]){
 			_audioSource.pitch = 1;
 			_audioSource.clip = _audioClips[1];
 			_audioSource.Play();
-			break;
-		case 2:
-			//
-			_audioSource.pitch = 1;
-			_audioSource.clip = _audioClips[2];
-			_audioSource.Play();			
+			}
 			break;
 		case 3:
 			//
+			if (_audioSource.clip != _audioClips[2]){
 			_audioSource.pitch = 1;
-			_audioSource.clip = _audioClips[3];
-			_audioSource.Play();			
+			_audioSource.clip = _audioClips[2];
+			_audioSource.Play();
+			}
 			break;
 		case 4:
 			//
+			if (_audioSource.clip != _audioClips[3]){
 			_audioSource.pitch = 1;
-			_audioSource.clip = _audioClips[4];
-			_audioSource.Play();			
+			_audioSource.clip = _audioClips[3];
+			_audioSource.Play();
+			}
 			break;
 		case 5:
 			//
+			if (_audioSource.clip != _audioClips[4]){
 			_audioSource.pitch = 1;
-			_audioSource.clip = _audioClips[5];
-			_audioSource.Play();			
+			_audioSource.clip = _audioClips[4];
+			_audioSource.Play();
+			}
 			break;
 		case 6:
 			//
+			if (_audioSource.clip != _audioClips[5]){
 			_audioSource.pitch = 1;
-			_audioSource.clip = _audioClips[6];
-			_audioSource.Play();			
+			_audioSource.clip = _audioClips[5];
+			_audioSource.Play();
+			}
 			break;
 
 		}
