@@ -1,0 +1,685 @@
+fileFormatVersion: 2
+guid: 11efbe1558184324da606f5b74a90e2b
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: asticot
+    100002: asticot001
+    100004: asticot002
+    100006: asticot003
+    100008: asticot004
+    100010: asticot005
+    100012: asticot006
+    100014: asticot007
+    100016: asticot008
+    100018: asticot009
+    100020: asticot010
+    100022: //RootNode
+    100024: Bone_asticot01
+    100026: Bone_asticot012
+    100028: Bone_asticot013
+    100030: Bone_asticot014
+    100032: Bone_asticot015
+    100034: Bone_asticot016
+    100036: Bone_asticot017
+    100038: Bone_asticot018
+    100040: Bone_asticot019
+    100042: Bone_asticot02
+    100044: Bone_asticot020
+    100046: Bone_asticot021
+    100048: Bone_asticot022
+    100050: Bone_asticot023
+    100052: Bone_asticot024
+    100054: Bone_asticot025
+    100056: Bone_asticot026
+    100058: Bone_asticot027
+    100060: Bone_asticot028
+    100062: Bone_asticot029
+    100064: Bone_asticot03
+    100066: Bone_asticot030
+    100068: Bone_asticot031
+    100070: Bone_asticot032
+    100072: Bone_asticot033
+    100074: Bone_asticot034
+    100076: Bone_asticot035
+    100078: Bone_asticot036
+    100080: Bone_asticot037
+    100082: Bone_asticot038
+    100084: Bone_asticot039
+    100086: Bone_asticot04
+    100088: Bone_asticot040
+    100090: Bone_asticot041
+    100092: Bone_asticot042
+    100094: Bone_asticot043
+    100096: Bone_asticot044
+    100098: Bone_asticot045
+    100100: Bone_asticot046
+    100102: Bone_asticot047
+    100104: Bone_asticot048
+    100106: Bone_asticot049
+    100108: Bone_asticot05
+    100110: Bone_asticot050
+    100112: Bone_asticot051
+    100114: Bone_asticot052
+    100116: Bone_asticot053
+    100118: Bone_asticot054
+    100120: Bone_asticot055
+    100122: Bone_asticot056
+    100124: Bone_asticot057
+    100126: Bone_asticot058
+    100128: Bone_asticot059
+    100130: Bone_asticot06
+    100132: Bone_asticot060
+    100134: Bone_asticot061
+    100136: Bone_asticot062
+    100138: Bone_asticot063
+    100140: Bone_asticot064
+    100142: Bone_asticot065
+    100144: Bone_asticot066
+    100146: Bone_asticot067
+    100148: Bone_asticot068
+    100150: Bone_asticot069
+    100152: Bone_asticot07
+    100154: Bone_asticot070
+    100156: Bone_asticot071
+    100158: Bone_asticot072
+    100160: Bone_asticot073
+    100162: Bone_asticot074
+    100164: Bone_asticot075
+    100166: Bone_asticot076
+    100168: Bone_asticot077
+    100170: Bone_asticot078
+    100172: Bone_asticot079
+    100174: Bone_asticot08
+    100176: Bone_asticot080
+    100178: Bone_asticot081
+    100180: Bone_asticot082
+    100182: Bone_asticot083
+    100184: Bone_asticot084
+    100186: Bone_asticot085
+    100188: Bone_asticot086
+    100190: Bone_asticot087
+    100192: Bone_asticot088
+    100194: Bone_asticot089
+    100196: Bone_asticot09
+    100198: Bone_asticot090
+    100200: Bone_asticot091
+    100202: Bone_asticot092
+    100204: Bone_asticot093
+    100206: Bone_asticot094
+    100208: Bone_asticot095
+    100210: Bone_asticot096
+    100212: Bone_asticot097
+    100214: Bone_asticot098
+    100216: Bone_asticot099
+    100218: Bone_asticot10
+    100220: Bone_asticot100
+    100222: Bone_asticot101
+    100224: Bone_asticot102
+    100226: Bone_asticot103
+    100228: Bone_asticot104
+    100230: Bone_asticot105
+    100232: Bone_asticot106
+    100234: Bone_asticot107
+    100236: Bone_asticot108
+    100238: Bone_asticot109
+    100240: Bone_asticot11
+    100242: Bone_asticot110
+    100244: Bone_asticot111
+    100246: Bone_asticot112
+    100248: Bone_asticot113
+    100250: Bone_asticot114
+    100252: Bone_asticot115
+    100254: Bone_asticot116
+    100256: Bone_asticot117
+    100258: Bone_asticot118
+    100260: Bone_asticot119
+    100262: Bone_asticot120
+    100264: Bone_asticot121
+    100266: Particle View 001
+    100268: Particle View 002
+    100270: Particle View 003
+    100272: Particle View 004
+    100274: Particle View 005
+    100276: Particle View 006
+    100278: Particle View 007
+    100280: Particle View 008
+    100282: Particle View 009
+    100284: Particle View 010
+    100286: Particle View 011
+    400000: asticot
+    400002: asticot001
+    400004: asticot002
+    400006: asticot003
+    400008: asticot004
+    400010: asticot005
+    400012: asticot006
+    400014: asticot007
+    400016: asticot008
+    400018: asticot009
+    400020: asticot010
+    400022: //RootNode
+    400024: Bone_asticot01
+    400026: Bone_asticot012
+    400028: Bone_asticot013
+    400030: Bone_asticot014
+    400032: Bone_asticot015
+    400034: Bone_asticot016
+    400036: Bone_asticot017
+    400038: Bone_asticot018
+    400040: Bone_asticot019
+    400042: Bone_asticot02
+    400044: Bone_asticot020
+    400046: Bone_asticot021
+    400048: Bone_asticot022
+    400050: Bone_asticot023
+    400052: Bone_asticot024
+    400054: Bone_asticot025
+    400056: Bone_asticot026
+    400058: Bone_asticot027
+    400060: Bone_asticot028
+    400062: Bone_asticot029
+    400064: Bone_asticot03
+    400066: Bone_asticot030
+    400068: Bone_asticot031
+    400070: Bone_asticot032
+    400072: Bone_asticot033
+    400074: Bone_asticot034
+    400076: Bone_asticot035
+    400078: Bone_asticot036
+    400080: Bone_asticot037
+    400082: Bone_asticot038
+    400084: Bone_asticot039
+    400086: Bone_asticot04
+    400088: Bone_asticot040
+    400090: Bone_asticot041
+    400092: Bone_asticot042
+    400094: Bone_asticot043
+    400096: Bone_asticot044
+    400098: Bone_asticot045
+    400100: Bone_asticot046
+    400102: Bone_asticot047
+    400104: Bone_asticot048
+    400106: Bone_asticot049
+    400108: Bone_asticot05
+    400110: Bone_asticot050
+    400112: Bone_asticot051
+    400114: Bone_asticot052
+    400116: Bone_asticot053
+    400118: Bone_asticot054
+    400120: Bone_asticot055
+    400122: Bone_asticot056
+    400124: Bone_asticot057
+    400126: Bone_asticot058
+    400128: Bone_asticot059
+    400130: Bone_asticot06
+    400132: Bone_asticot060
+    400134: Bone_asticot061
+    400136: Bone_asticot062
+    400138: Bone_asticot063
+    400140: Bone_asticot064
+    400142: Bone_asticot065
+    400144: Bone_asticot066
+    400146: Bone_asticot067
+    400148: Bone_asticot068
+    400150: Bone_asticot069
+    400152: Bone_asticot07
+    400154: Bone_asticot070
+    400156: Bone_asticot071
+    400158: Bone_asticot072
+    400160: Bone_asticot073
+    400162: Bone_asticot074
+    400164: Bone_asticot075
+    400166: Bone_asticot076
+    400168: Bone_asticot077
+    400170: Bone_asticot078
+    400172: Bone_asticot079
+    400174: Bone_asticot08
+    400176: Bone_asticot080
+    400178: Bone_asticot081
+    400180: Bone_asticot082
+    400182: Bone_asticot083
+    400184: Bone_asticot084
+    400186: Bone_asticot085
+    400188: Bone_asticot086
+    400190: Bone_asticot087
+    400192: Bone_asticot088
+    400194: Bone_asticot089
+    400196: Bone_asticot09
+    400198: Bone_asticot090
+    400200: Bone_asticot091
+    400202: Bone_asticot092
+    400204: Bone_asticot093
+    400206: Bone_asticot094
+    400208: Bone_asticot095
+    400210: Bone_asticot096
+    400212: Bone_asticot097
+    400214: Bone_asticot098
+    400216: Bone_asticot099
+    400218: Bone_asticot10
+    400220: Bone_asticot100
+    400222: Bone_asticot101
+    400224: Bone_asticot102
+    400226: Bone_asticot103
+    400228: Bone_asticot104
+    400230: Bone_asticot105
+    400232: Bone_asticot106
+    400234: Bone_asticot107
+    400236: Bone_asticot108
+    400238: Bone_asticot109
+    400240: Bone_asticot11
+    400242: Bone_asticot110
+    400244: Bone_asticot111
+    400246: Bone_asticot112
+    400248: Bone_asticot113
+    400250: Bone_asticot114
+    400252: Bone_asticot115
+    400254: Bone_asticot116
+    400256: Bone_asticot117
+    400258: Bone_asticot118
+    400260: Bone_asticot119
+    400262: Bone_asticot120
+    400264: Bone_asticot121
+    400266: Particle View 001
+    400268: Particle View 002
+    400270: Particle View 003
+    400272: Particle View 004
+    400274: Particle View 005
+    400276: Particle View 006
+    400278: Particle View 007
+    400280: Particle View 008
+    400282: Particle View 009
+    400284: Particle View 010
+    400286: Particle View 011
+    4300000: asticot
+    4300002: asticot001
+    4300004: asticot002
+    4300006: asticot003
+    4300008: asticot004
+    4300010: asticot005
+    4300012: asticot006
+    4300014: asticot007
+    4300016: asticot008
+    4300018: asticot009
+    4300020: asticot010
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: asticot
+    13700002: asticot001
+    13700004: asticot002
+    13700006: asticot003
+    13700008: asticot004
+    13700010: asticot005
+    13700012: asticot006
+    13700014: asticot007
+    13700016: asticot008
+    13700018: asticot009
+    13700020: asticot010
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: asticot
+        weight: 1
+      - path: asticot001
+        weight: 1
+      - path: asticot002
+        weight: 1
+      - path: asticot003
+        weight: 1
+      - path: asticot004
+        weight: 1
+      - path: asticot005
+        weight: 1
+      - path: asticot006
+        weight: 1
+      - path: asticot007
+        weight: 1
+      - path: asticot008
+        weight: 1
+      - path: asticot009
+        weight: 1
+      - path: asticot010
+        weight: 1
+      - path: Bone_asticot01
+        weight: 1
+      - path: Bone_asticot01/Bone_asticot02
+        weight: 1
+      - path: Bone_asticot01/Bone_asticot02/Bone_asticot03
+        weight: 1
+      - path: Bone_asticot01/Bone_asticot02/Bone_asticot03/Bone_asticot04
+        weight: 1
+      - path: Bone_asticot01/Bone_asticot02/Bone_asticot03/Bone_asticot04/Bone_asticot05
+        weight: 1
+      - path: Bone_asticot01/Bone_asticot02/Bone_asticot03/Bone_asticot04/Bone_asticot05/Bone_asticot06
+        weight: 1
+      - path: Bone_asticot01/Bone_asticot02/Bone_asticot03/Bone_asticot04/Bone_asticot05/Bone_asticot06/Bone_asticot07
+        weight: 1
+      - path: Bone_asticot01/Bone_asticot02/Bone_asticot03/Bone_asticot04/Bone_asticot05/Bone_asticot06/Bone_asticot07/Bone_asticot08
+        weight: 1
+      - path: Bone_asticot01/Bone_asticot02/Bone_asticot03/Bone_asticot04/Bone_asticot05/Bone_asticot06/Bone_asticot07/Bone_asticot08/Bone_asticot09
+        weight: 1
+      - path: Bone_asticot01/Bone_asticot02/Bone_asticot03/Bone_asticot04/Bone_asticot05/Bone_asticot06/Bone_asticot07/Bone_asticot08/Bone_asticot09/Bone_asticot10
+        weight: 1
+      - path: Bone_asticot01/Bone_asticot02/Bone_asticot03/Bone_asticot04/Bone_asticot05/Bone_asticot06/Bone_asticot07/Bone_asticot08/Bone_asticot09/Bone_asticot10/Bone_asticot11
+        weight: 1
+      - path: Bone_asticot012
+        weight: 1
+      - path: Bone_asticot012/Bone_asticot013
+        weight: 1
+      - path: Bone_asticot012/Bone_asticot013/Bone_asticot014
+        weight: 1
+      - path: Bone_asticot012/Bone_asticot013/Bone_asticot014/Bone_asticot015
+        weight: 1
+      - path: Bone_asticot012/Bone_asticot013/Bone_asticot014/Bone_asticot015/Bone_asticot016
+        weight: 1
+      - path: Bone_asticot012/Bone_asticot013/Bone_asticot014/Bone_asticot015/Bone_asticot016/Bone_asticot017
+        weight: 1
+      - path: Bone_asticot012/Bone_asticot013/Bone_asticot014/Bone_asticot015/Bone_asticot016/Bone_asticot017/Bone_asticot018
+        weight: 1
+      - path: Bone_asticot012/Bone_asticot013/Bone_asticot014/Bone_asticot015/Bone_asticot016/Bone_asticot017/Bone_asticot018/Bone_asticot019
+        weight: 1
+      - path: Bone_asticot012/Bone_asticot013/Bone_asticot014/Bone_asticot015/Bone_asticot016/Bone_asticot017/Bone_asticot018/Bone_asticot019/Bone_asticot020
+        weight: 1
+      - path: Bone_asticot012/Bone_asticot013/Bone_asticot014/Bone_asticot015/Bone_asticot016/Bone_asticot017/Bone_asticot018/Bone_asticot019/Bone_asticot020/Bone_asticot021
+        weight: 1
+      - path: Bone_asticot012/Bone_asticot013/Bone_asticot014/Bone_asticot015/Bone_asticot016/Bone_asticot017/Bone_asticot018/Bone_asticot019/Bone_asticot020/Bone_asticot021/Bone_asticot022
+        weight: 1
+      - path: Bone_asticot023
+        weight: 1
+      - path: Bone_asticot023/Bone_asticot024
+        weight: 1
+      - path: Bone_asticot023/Bone_asticot024/Bone_asticot025
+        weight: 1
+      - path: Bone_asticot023/Bone_asticot024/Bone_asticot025/Bone_asticot026
+        weight: 1
+      - path: Bone_asticot023/Bone_asticot024/Bone_asticot025/Bone_asticot026/Bone_asticot027
+        weight: 1
+      - path: Bone_asticot023/Bone_asticot024/Bone_asticot025/Bone_asticot026/Bone_asticot027/Bone_asticot028
+        weight: 1
+      - path: Bone_asticot023/Bone_asticot024/Bone_asticot025/Bone_asticot026/Bone_asticot027/Bone_asticot028/Bone_asticot029
+        weight: 1
+      - path: Bone_asticot023/Bone_asticot024/Bone_asticot025/Bone_asticot026/Bone_asticot027/Bone_asticot028/Bone_asticot029/Bone_asticot030
+        weight: 1
+      - path: Bone_asticot023/Bone_asticot024/Bone_asticot025/Bone_asticot026/Bone_asticot027/Bone_asticot028/Bone_asticot029/Bone_asticot030/Bone_asticot031
+        weight: 1
+      - path: Bone_asticot023/Bone_asticot024/Bone_asticot025/Bone_asticot026/Bone_asticot027/Bone_asticot028/Bone_asticot029/Bone_asticot030/Bone_asticot031/Bone_asticot032
+        weight: 1
+      - path: Bone_asticot023/Bone_asticot024/Bone_asticot025/Bone_asticot026/Bone_asticot027/Bone_asticot028/Bone_asticot029/Bone_asticot030/Bone_asticot031/Bone_asticot032/Bone_asticot033
+        weight: 1
+      - path: Bone_asticot034
+        weight: 1
+      - path: Bone_asticot034/Bone_asticot035
+        weight: 1
+      - path: Bone_asticot034/Bone_asticot035/Bone_asticot036
+        weight: 1
+      - path: Bone_asticot034/Bone_asticot035/Bone_asticot036/Bone_asticot037
+        weight: 1
+      - path: Bone_asticot034/Bone_asticot035/Bone_asticot036/Bone_asticot037/Bone_asticot038
+        weight: 1
+      - path: Bone_asticot034/Bone_asticot035/Bone_asticot036/Bone_asticot037/Bone_asticot038/Bone_asticot039
+        weight: 1
+      - path: Bone_asticot034/Bone_asticot035/Bone_asticot036/Bone_asticot037/Bone_asticot038/Bone_asticot039/Bone_asticot040
+        weight: 1
+      - path: Bone_asticot034/Bone_asticot035/Bone_asticot036/Bone_asticot037/Bone_asticot038/Bone_asticot039/Bone_asticot040/Bone_asticot041
+        weight: 1
+      - path: Bone_asticot034/Bone_asticot035/Bone_asticot036/Bone_asticot037/Bone_asticot038/Bone_asticot039/Bone_asticot040/Bone_asticot041/Bone_asticot042
+        weight: 1
+      - path: Bone_asticot034/Bone_asticot035/Bone_asticot036/Bone_asticot037/Bone_asticot038/Bone_asticot039/Bone_asticot040/Bone_asticot041/Bone_asticot042/Bone_asticot043
+        weight: 1
+      - path: Bone_asticot034/Bone_asticot035/Bone_asticot036/Bone_asticot037/Bone_asticot038/Bone_asticot039/Bone_asticot040/Bone_asticot041/Bone_asticot042/Bone_asticot043/Bone_asticot044
+        weight: 1
+      - path: Bone_asticot045
+        weight: 1
+      - path: Bone_asticot045/Bone_asticot046
+        weight: 1
+      - path: Bone_asticot045/Bone_asticot046/Bone_asticot047
+        weight: 1
+      - path: Bone_asticot045/Bone_asticot046/Bone_asticot047/Bone_asticot048
+        weight: 1
+      - path: Bone_asticot045/Bone_asticot046/Bone_asticot047/Bone_asticot048/Bone_asticot049
+        weight: 1
+      - path: Bone_asticot045/Bone_asticot046/Bone_asticot047/Bone_asticot048/Bone_asticot049/Bone_asticot050
+        weight: 1
+      - path: Bone_asticot045/Bone_asticot046/Bone_asticot047/Bone_asticot048/Bone_asticot049/Bone_asticot050/Bone_asticot051
+        weight: 1
+      - path: Bone_asticot045/Bone_asticot046/Bone_asticot047/Bone_asticot048/Bone_asticot049/Bone_asticot050/Bone_asticot051/Bone_asticot052
+        weight: 1
+      - path: Bone_asticot045/Bone_asticot046/Bone_asticot047/Bone_asticot048/Bone_asticot049/Bone_asticot050/Bone_asticot051/Bone_asticot052/Bone_asticot053
+        weight: 1
+      - path: Bone_asticot045/Bone_asticot046/Bone_asticot047/Bone_asticot048/Bone_asticot049/Bone_asticot050/Bone_asticot051/Bone_asticot052/Bone_asticot053/Bone_asticot054
+        weight: 1
+      - path: Bone_asticot045/Bone_asticot046/Bone_asticot047/Bone_asticot048/Bone_asticot049/Bone_asticot050/Bone_asticot051/Bone_asticot052/Bone_asticot053/Bone_asticot054/Bone_asticot055
+        weight: 1
+      - path: Bone_asticot056
+        weight: 1
+      - path: Bone_asticot056/Bone_asticot057
+        weight: 1
+      - path: Bone_asticot056/Bone_asticot057/Bone_asticot058
+        weight: 1
+      - path: Bone_asticot056/Bone_asticot057/Bone_asticot058/Bone_asticot059
+        weight: 1
+      - path: Bone_asticot056/Bone_asticot057/Bone_asticot058/Bone_asticot059/Bone_asticot060
+        weight: 1
+      - path: Bone_asticot056/Bone_asticot057/Bone_asticot058/Bone_asticot059/Bone_asticot060/Bone_asticot061
+        weight: 1
+      - path: Bone_asticot056/Bone_asticot057/Bone_asticot058/Bone_asticot059/Bone_asticot060/Bone_asticot061/Bone_asticot062
+        weight: 1
+      - path: Bone_asticot056/Bone_asticot057/Bone_asticot058/Bone_asticot059/Bone_asticot060/Bone_asticot061/Bone_asticot062/Bone_asticot063
+        weight: 1
+      - path: Bone_asticot056/Bone_asticot057/Bone_asticot058/Bone_asticot059/Bone_asticot060/Bone_asticot061/Bone_asticot062/Bone_asticot063/Bone_asticot064
+        weight: 1
+      - path: Bone_asticot056/Bone_asticot057/Bone_asticot058/Bone_asticot059/Bone_asticot060/Bone_asticot061/Bone_asticot062/Bone_asticot063/Bone_asticot064/Bone_asticot065
+        weight: 1
+      - path: Bone_asticot056/Bone_asticot057/Bone_asticot058/Bone_asticot059/Bone_asticot060/Bone_asticot061/Bone_asticot062/Bone_asticot063/Bone_asticot064/Bone_asticot065/Bone_asticot066
+        weight: 1
+      - path: Bone_asticot067
+        weight: 1
+      - path: Bone_asticot067/Bone_asticot068
+        weight: 1
+      - path: Bone_asticot067/Bone_asticot068/Bone_asticot069
+        weight: 1
+      - path: Bone_asticot067/Bone_asticot068/Bone_asticot069/Bone_asticot070
+        weight: 1
+      - path: Bone_asticot067/Bone_asticot068/Bone_asticot069/Bone_asticot070/Bone_asticot071
+        weight: 1
+      - path: Bone_asticot067/Bone_asticot068/Bone_asticot069/Bone_asticot070/Bone_asticot071/Bone_asticot072
+        weight: 1
+      - path: Bone_asticot067/Bone_asticot068/Bone_asticot069/Bone_asticot070/Bone_asticot071/Bone_asticot072/Bone_asticot073
+        weight: 1
+      - path: Bone_asticot067/Bone_asticot068/Bone_asticot069/Bone_asticot070/Bone_asticot071/Bone_asticot072/Bone_asticot073/Bone_asticot074
+        weight: 1
+      - path: Bone_asticot067/Bone_asticot068/Bone_asticot069/Bone_asticot070/Bone_asticot071/Bone_asticot072/Bone_asticot073/Bone_asticot074/Bone_asticot075
+        weight: 1
+      - path: Bone_asticot067/Bone_asticot068/Bone_asticot069/Bone_asticot070/Bone_asticot071/Bone_asticot072/Bone_asticot073/Bone_asticot074/Bone_asticot075/Bone_asticot076
+        weight: 1
+      - path: Bone_asticot067/Bone_asticot068/Bone_asticot069/Bone_asticot070/Bone_asticot071/Bone_asticot072/Bone_asticot073/Bone_asticot074/Bone_asticot075/Bone_asticot076/Bone_asticot077
+        weight: 1
+      - path: Bone_asticot078
+        weight: 1
+      - path: Bone_asticot078/Bone_asticot079
+        weight: 1
+      - path: Bone_asticot078/Bone_asticot079/Bone_asticot080
+        weight: 1
+      - path: Bone_asticot078/Bone_asticot079/Bone_asticot080/Bone_asticot081
+        weight: 1
+      - path: Bone_asticot078/Bone_asticot079/Bone_asticot080/Bone_asticot081/Bone_asticot082
+        weight: 1
+      - path: Bone_asticot078/Bone_asticot079/Bone_asticot080/Bone_asticot081/Bone_asticot082/Bone_asticot083
+        weight: 1
+      - path: Bone_asticot078/Bone_asticot079/Bone_asticot080/Bone_asticot081/Bone_asticot082/Bone_asticot083/Bone_asticot084
+        weight: 1
+      - path: Bone_asticot078/Bone_asticot079/Bone_asticot080/Bone_asticot081/Bone_asticot082/Bone_asticot083/Bone_asticot084/Bone_asticot085
+        weight: 1
+      - path: Bone_asticot078/Bone_asticot079/Bone_asticot080/Bone_asticot081/Bone_asticot082/Bone_asticot083/Bone_asticot084/Bone_asticot085/Bone_asticot086
+        weight: 1
+      - path: Bone_asticot078/Bone_asticot079/Bone_asticot080/Bone_asticot081/Bone_asticot082/Bone_asticot083/Bone_asticot084/Bone_asticot085/Bone_asticot086/Bone_asticot087
+        weight: 1
+      - path: Bone_asticot078/Bone_asticot079/Bone_asticot080/Bone_asticot081/Bone_asticot082/Bone_asticot083/Bone_asticot084/Bone_asticot085/Bone_asticot086/Bone_asticot087/Bone_asticot088
+        weight: 1
+      - path: Bone_asticot089
+        weight: 1
+      - path: Bone_asticot089/Bone_asticot090
+        weight: 1
+      - path: Bone_asticot089/Bone_asticot090/Bone_asticot091
+        weight: 1
+      - path: Bone_asticot089/Bone_asticot090/Bone_asticot091/Bone_asticot092
+        weight: 1
+      - path: Bone_asticot089/Bone_asticot090/Bone_asticot091/Bone_asticot092/Bone_asticot093
+        weight: 1
+      - path: Bone_asticot089/Bone_asticot090/Bone_asticot091/Bone_asticot092/Bone_asticot093/Bone_asticot094
+        weight: 1
+      - path: Bone_asticot089/Bone_asticot090/Bone_asticot091/Bone_asticot092/Bone_asticot093/Bone_asticot094/Bone_asticot095
+        weight: 1
+      - path: Bone_asticot089/Bone_asticot090/Bone_asticot091/Bone_asticot092/Bone_asticot093/Bone_asticot094/Bone_asticot095/Bone_asticot096
+        weight: 1
+      - path: Bone_asticot089/Bone_asticot090/Bone_asticot091/Bone_asticot092/Bone_asticot093/Bone_asticot094/Bone_asticot095/Bone_asticot096/Bone_asticot097
+        weight: 1
+      - path: Bone_asticot089/Bone_asticot090/Bone_asticot091/Bone_asticot092/Bone_asticot093/Bone_asticot094/Bone_asticot095/Bone_asticot096/Bone_asticot097/Bone_asticot098
+        weight: 1
+      - path: Bone_asticot089/Bone_asticot090/Bone_asticot091/Bone_asticot092/Bone_asticot093/Bone_asticot094/Bone_asticot095/Bone_asticot096/Bone_asticot097/Bone_asticot098/Bone_asticot099
+        weight: 1
+      - path: Bone_asticot100
+        weight: 1
+      - path: Bone_asticot100/Bone_asticot101
+        weight: 1
+      - path: Bone_asticot100/Bone_asticot101/Bone_asticot102
+        weight: 1
+      - path: Bone_asticot100/Bone_asticot101/Bone_asticot102/Bone_asticot103
+        weight: 1
+      - path: Bone_asticot100/Bone_asticot101/Bone_asticot102/Bone_asticot103/Bone_asticot104
+        weight: 1
+      - path: Bone_asticot100/Bone_asticot101/Bone_asticot102/Bone_asticot103/Bone_asticot104/Bone_asticot105
+        weight: 1
+      - path: Bone_asticot100/Bone_asticot101/Bone_asticot102/Bone_asticot103/Bone_asticot104/Bone_asticot105/Bone_asticot106
+        weight: 1
+      - path: Bone_asticot100/Bone_asticot101/Bone_asticot102/Bone_asticot103/Bone_asticot104/Bone_asticot105/Bone_asticot106/Bone_asticot107
+        weight: 1
+      - path: Bone_asticot100/Bone_asticot101/Bone_asticot102/Bone_asticot103/Bone_asticot104/Bone_asticot105/Bone_asticot106/Bone_asticot107/Bone_asticot108
+        weight: 1
+      - path: Bone_asticot100/Bone_asticot101/Bone_asticot102/Bone_asticot103/Bone_asticot104/Bone_asticot105/Bone_asticot106/Bone_asticot107/Bone_asticot108/Bone_asticot109
+        weight: 1
+      - path: Bone_asticot100/Bone_asticot101/Bone_asticot102/Bone_asticot103/Bone_asticot104/Bone_asticot105/Bone_asticot106/Bone_asticot107/Bone_asticot108/Bone_asticot109/Bone_asticot110
+        weight: 1
+      - path: Bone_asticot111
+        weight: 1
+      - path: Bone_asticot111/Bone_asticot112
+        weight: 1
+      - path: Bone_asticot111/Bone_asticot112/Bone_asticot113
+        weight: 1
+      - path: Bone_asticot111/Bone_asticot112/Bone_asticot113/Bone_asticot114
+        weight: 1
+      - path: Bone_asticot111/Bone_asticot112/Bone_asticot113/Bone_asticot114/Bone_asticot115
+        weight: 1
+      - path: Bone_asticot111/Bone_asticot112/Bone_asticot113/Bone_asticot114/Bone_asticot115/Bone_asticot116
+        weight: 1
+      - path: Bone_asticot111/Bone_asticot112/Bone_asticot113/Bone_asticot114/Bone_asticot115/Bone_asticot116/Bone_asticot117
+        weight: 1
+      - path: Bone_asticot111/Bone_asticot112/Bone_asticot113/Bone_asticot114/Bone_asticot115/Bone_asticot116/Bone_asticot117/Bone_asticot118
+        weight: 1
+      - path: Bone_asticot111/Bone_asticot112/Bone_asticot113/Bone_asticot114/Bone_asticot115/Bone_asticot116/Bone_asticot117/Bone_asticot118/Bone_asticot119
+        weight: 1
+      - path: Bone_asticot111/Bone_asticot112/Bone_asticot113/Bone_asticot114/Bone_asticot115/Bone_asticot116/Bone_asticot117/Bone_asticot118/Bone_asticot119/Bone_asticot120
+        weight: 1
+      - path: Bone_asticot111/Bone_asticot112/Bone_asticot113/Bone_asticot114/Bone_asticot115/Bone_asticot116/Bone_asticot117/Bone_asticot118/Bone_asticot119/Bone_asticot120/Bone_asticot121
+        weight: 1
+      - path: Particle View 001
+        weight: 1
+      - path: Particle View 002
+        weight: 1
+      - path: Particle View 003
+        weight: 1
+      - path: Particle View 004
+        weight: 1
+      - path: Particle View 005
+        weight: 1
+      - path: Particle View 006
+        weight: 1
+      - path: Particle View 007
+        weight: 1
+      - path: Particle View 008
+        weight: 1
+      - path: Particle View 009
+        weight: 1
+      - path: Particle View 010
+        weight: 1
+      - path: Particle View 011
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
